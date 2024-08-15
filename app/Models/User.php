@@ -10,10 +10,6 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    public function chirps(): HasMany
-    {
-        return $this->hasMany(Chirp::class);
-    }
     use HasFactory, Notifiable;
 
     /**
@@ -49,4 +45,11 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function chirps(): HasMany
+    {
+        return $this->hasMany(Chirp::class);
+    }
+
+
 }
